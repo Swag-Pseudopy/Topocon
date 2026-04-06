@@ -52,7 +52,7 @@ if __name__ == "__main__":
     # Task: Real (Zoo)
     if os.path.exists('data/zoo.csv'):
         zoo_df = pd.read_csv('data/zoo.csv')
-        X_zoo = zoo_df.drop(['animal_name', 'class_type'], axis=1).values
-        y_zoo = zoo_df['class_type'].values
+        X_zoo = zoo_df.iloc[:, :-1].values
+        y_zoo = zoo_dfiloc[:, -1].values
         res_zoo = run_all_methods(X_zoo, n_clusters=len(np.unique(y_zoo)))
         plot_tsne_grid(X_zoo, res_zoo, "Zoo_Dataset")
