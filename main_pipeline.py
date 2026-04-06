@@ -24,20 +24,20 @@ def run_all_methods(X, n_clusters):
     tomato = Tomato(n_clusters=n_clusters)
     results['Tomato'] = tomato.fit_predict(X)
     
-    # 6: TopoKMeans (From your repo [cite: 44])
+    # 6: TopoKMeans
     results['TopoKMeans'] = topo_kmeans(X, nKNN=10, nClust=n_clusters)['labels']
     
-    # 7: Convex Clustering (Standard Baseline [cite: 302])
+    # 7: Convex Clustering
     # Reusing RCC logic with beta=0 (no outlier component)
     results['ConvexClustering'] = RCC(alpha=0.1, beta=0).fit_predict(X, n_clusters)
     
-    # 8: BiConvex Clustering (Paper: bcc.pdf [cite: 807, 1031])
+    # 8: BiConvex Clustering
     results['BiConvex'] = BCC(gamma=10.0, lam=0.1).fit_predict(X, n_clusters)
     
-    # 9: Robust Convex Clustering (Paper: rcc.pdf [cite: 437, 531])
+    # 9: Robust Convex Clustering
     results['RCC'] = RCC(alpha=0.1, beta=0.5).fit_predict(X, n_clusters)
     
-    # 10: TopoCon (Paper: topocc.pdf [cite: 1, 165])
+    # 10: TopoCon
     results['TopoCon'] = TopoCon(n_clusters=n_clusters).fit_predict(X)
     
     return results
