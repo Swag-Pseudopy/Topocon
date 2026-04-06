@@ -49,6 +49,11 @@ if __name__ == "__main__":
     res_mob = run_all_methods(data_mob, n_clusters=2)
     plot_tsne_grid(data_mob, res_mob, "Mobius_Torus")
 
+    # Task: Synthetic (Cylinder)
+    data_mob, labels_mob = get_cylinder_torus()
+    res_mob = run_all_methods(data_mob, n_clusters=2)
+    plot_tsne_grid(data_mob, res_mob, "Mobius_Torus")
+
     # Task: Real (Zoo)
     if os.path.exists('data/zoo.csv'):
         zoo_df = pd.read_csv('data/zoo.csv')
