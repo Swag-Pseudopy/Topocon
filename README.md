@@ -23,6 +23,11 @@ TopoCon bridges this gap by:
 
 
 
+**The TopoCon Pipeline (Warmup):**
+Below is the conceptual framework of TopoCon, illustrating the progression from local neighborhood filtrations to the persistence-matrix-driven convex optimization.
+
+> `![TopoCon Framework/Warmup Diagram](assets/Images/warmup_diagram.png)`
+
 **The TopoCon Objective Function:**
 
 
@@ -93,7 +98,9 @@ python main_pipeline.py --dataset cylinder_torus --method topocon
 
 ## 📊 Experimental Results
 
-TopoCon was evaluated against a rigorous suite of baseline methods including KM, DBSCAN, Mean-Shift, Spectral Clustering, CC, BCC, RCC, TKM, ToMATo, and TPCC.
+TopoCon was evaluated against a suite of baseline methods including KM, DBSCAN, Mean-Shift, Spectral Clustering, CC, BCC, RCC, TKM, ToMATo, and TPCC.
+
+> `![Mobius Torus Comparison](assets/Images/clustering_comparison_panel.png)`
 
 ### Synthetic Manifolds
 
@@ -101,60 +108,61 @@ On highly complex, intertwined topological structures, TopoCon achieves perfect 
 
 * **Cylinder Torus:** ARI = 1.000
 
+> `![Cylinder Torus Synthetic Results](assets/Images/panel_cylinder_torus.png)`
 
-* **Möbius Torus:** ARI = 1.000
-
+* **Sphere Ring:** ARI = 0.914
+  
+> `![Sphere Ring Synthetic Results](assets/Images/panel_sphere_ring.png)`
 
 * **Two Moons:** ARI = 0.951
 
+> `![Two Moons Synthetic Results](assets/Images/panel_two_moons.png)`
 
-* **Torus Line Sphere:** ARI = 0.942
-
-
-
-*(Place your 3D visual panels here)*
-
-> `![Qualitative Synthetic Results](assets/Images/panel_cylinder_torus.png)`
-> `![Mobius Torus Comparison](assets/Images/clustering_comparison_panel.png)`
 
 ### Real-World Datasets
 
-TopoCon generalizes efficiently to high-dimensional real-world data across tabular, biological, and image domains:
+TopoCon generalizes efficiently to high-dimensional real-world data across tabular, biological, and image domains. For instance, on the **Zoo dataset**, TopoCon successfully maps higher-dimensional features into coherent clusters ($\text{ARI} = 0.772$), demonstrating adaptability beyond controlled synthetic manifolds.
 
 * **Wisconsin Breast Cancer:** ARI = 0.821
 
+> `![Wisconsin B.C. Dataset t-SNE](assets/Images/tsne_wisconsin.png)`
 
 * **ORHD:** ARI = 0.783
 
+> `![ORHD Dataset t-SNE](assets/Images/tsne_orhd.png)`
 
 * **Zoo:** ARI = 0.772
 
+> `![Zoo Dataset t-SNE](assets/Images/tsne_zoo.png)`
 
 
-*(Place your t-SNE visualizations here)*
+## 🔬 Ablation Studies & Robustness
 
-> `![t-SNE Real Data](assets/Images/tsne_wisconsin.png)`
+Extensive ablation studies confirm the necessity of the core components and evaluate the framework's behavior under stress.
 
-## 🔬 Ablation Studies
+### 1. Homological Dimensions ($H_0$ vs $H_1$)
 
-Extensive ablation studies confirm the necessity of the core components:
+To quantify the impact of different topological signatures, we evaluated TopoCon using only connected components ($H_0$), only loops ($H_1$), and their combination. While $H_0$ carries the primary clustering signal for dense real-world data, complex intertwined synthetic manifolds require the synergistic combination of both $H_0$ and $H_1$ to achieve peak performance.
 
-1. **Homological Dimensions:** For synthetic manifolds with intrinsic loops, combining both $H_0$ and $H_1$ persistence pairs is critical. Dropping either dimension results in significant performance decay.
+> `![Homology Ablation](assets/Images/homology_ablation_panel.png)`
 
+### 2. Topology-Aware Similarity
 
-2. **Topology-Aware Similarity:** Replacing the Gaussian kernel with a uniform weight ($w_{ij} = 1$) drastically reduces clustering quality, proving the necessity of topology-guided fusion paths.
-
-
-3. **Noise Robustness:** TopoCon retains strong topological separation capabilities even under substantial Gaussian noise perturbations ($\rho = 0.3$), consistently peaking at moderate local neighborhood graph sizes ($k$).
-
-
-
-*(Place your ablation and robustness curves here)*
+Replacing the Gaussian kernel with a uniform weight ($w_{ij} = 1$) drastically reduces clustering quality, proving the necessity of topology-guided fusion paths.
 
 > `![Hyperparameter Ablation](assets/Images/parameter_ablation_3d.png)`
-> `![Noise Robustness](assets/Images/noise_robustness_ablation.png)`
 
-## 📜 Citation
+### 3. Noise Robustness (Torus-Line-Sphere Extremes)
+
+We tested TopoCon's resilience on the **Torus-Line-Sphere** dataset under varying levels of Gaussian noise ($\rho$). The performance curve demonstrates stable structural separation at low noise levels, peaking at moderate local neighborhood graph sizes ($k$). However, as the graph becomes over-smoothed at excessively high $k$ values, the performance collapses chaotically as the structural voids are bridged by noise.
+
+> `![Noise Robustness Curve](assets/Images/noise_robustness_ablation.png)`
+
+To visually highlight this structural breakdown, the following panel compares the ground truth against TopoCon's predictions at two environmental extremes: the clean baseline ($\rho = 0.0, \text{ARI} = 0.989$) versus a highly noisy state ($\rho = 0.3, \text{ARI} = 0.326$) where spatial bleeding obscures the manifold boundaries.
+
+> `![Torus Line Sphere Extremes](assets/Images/tls_noise_ablat.png)`
+
+<!--## 📜 Citation
 
 If you find this code useful in your research, please consider citing our paper:
 
@@ -164,6 +172,6 @@ If you find this code useful in your research, please consider citing our paper:
   author={Pratihar, Arghya and Das, Swagato and Das, Swagatam},
   journal={Indian Statistical Institute, Kolkata},
   year={2026}
-}
-
 ```
+-->
+}
