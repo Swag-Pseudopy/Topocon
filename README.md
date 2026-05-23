@@ -133,7 +133,7 @@ TopoCon generalizes efficiently to high-dimensional real-world data across tabul
 
 * **Zoo:** ARI = 0.772
 
-> `![Zoo Dataset t-SNE](assets/Images/tsne_zoo.png)`
+> `[Zoo Dataset t-SNE](assets/Images/tsne_zoo.png)`
 
 
 ## 🔬 Ablation Studies & Robustness
@@ -174,4 +174,3 @@ If you find this code useful in your research, please consider citing our paper:
   year={2026}
 ```
 -->
-}
