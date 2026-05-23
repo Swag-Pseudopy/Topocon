@@ -129,7 +129,7 @@ TopoCon generalizes efficiently to high-dimensional real-world data across tabul
 
 * **ORHD:** ARI = 0.783
 
-> `![ORHD Dataset t-SNE](assets/Images/tsne_orhd.png)`
+> [ORHD Dataset t-SNE](assets/Images/tsne_orhd.png)
 
 * **Zoo:** ARI = 0.772
 
