@@ -26,7 +26,7 @@ TopoCon bridges this gap by:
 **The TopoCon Pipeline (Warmup):**
 Below is the conceptual framework of TopoCon, illustrating the progression from local neighborhood filtrations to the persistence-matrix-driven convex optimization.
 
-> `![TopoCon Framework/Warmup Diagram](assets/Images/warmup_diagram.png)`
+> ![TopoCon Framework/Warmup Diagram](assets/Images/warmup_diagram.png)
 
 **The TopoCon Objective Function:**
 
@@ -100,7 +100,7 @@ python main_pipeline.py --dataset cylinder_torus --method topocon
 
 TopoCon was evaluated against a suite of baseline methods including KM, DBSCAN, Mean-Shift, Spectral Clustering, CC, BCC, RCC, TKM, ToMATo, and TPCC.
 
-> `![Mobius Torus Comparison](assets/Images/clustering_comparison_panel.png)`
+> ![Mobius Torus Comparison](assets/Images/clustering_comparison_panel.png)
 
 ### Synthetic Manifolds
 
@@ -108,15 +108,15 @@ On highly complex, intertwined topological structures, TopoCon achieves perfect 
 
 * **Cylinder Torus:** ARI = 1.000
 
-> `![Cylinder Torus Synthetic Results](assets/Images/panel_cylinder_torus.png)`
+> ![Cylinder Torus Synthetic Results](assets/Images/panel_cylinder_torus.png)
 
 * **Sphere Ring:** ARI = 0.914
   
-> `![Sphere Ring Synthetic Results](assets/Images/panel_sphere_ring.png)`
+> ![Sphere Ring Synthetic Results](assets/Images/panel_sphere_ring.png)
 
 * **Two Moons:** ARI = 0.951
 
-> `![Two Moons Synthetic Results](assets/Images/panel_two_moons.png)`
+> ![Two Moons Synthetic Results](assets/Images/panel_two_moons.png)
 
 
 ### Real-World Datasets
@@ -125,15 +125,15 @@ TopoCon generalizes efficiently to high-dimensional real-world data across tabul
 
 * **Wisconsin Breast Cancer:** ARI = 0.821
 
-> `![Wisconsin B.C. Dataset t-SNE](assets/Images/tsne_wisconsin.png)`
+> ![Wisconsin B.C. Dataset t-SNE](assets/Images/tsne_wisconsin.png)
 
 * **ORHD:** ARI = 0.783
 
-> [ORHD Dataset t-SNE](assets/Images/tsne_orhd.png)
+> ![ORHD Dataset t-SNE](assets/Images/tsne_orhd.png)
 
 * **Zoo:** ARI = 0.772
 
-> `[Zoo Dataset t-SNE](assets/Images/tsne_zoo.png)`
+> ![Zoo Dataset t-SNE](assets/Images/tsne_zoo.png)
 
 
 ## 🔬 Ablation Studies & Robustness
@@ -144,23 +144,23 @@ Extensive ablation studies confirm the necessity of the core components and eval
 
 To quantify the impact of different topological signatures, we evaluated TopoCon using only connected components ($H_0$), only loops ($H_1$), and their combination. While $H_0$ carries the primary clustering signal for dense real-world data, complex intertwined synthetic manifolds require the synergistic combination of both $H_0$ and $H_1$ to achieve peak performance.
 
-> `![Homology Ablation](assets/Images/homology_ablation_panel.png)`
+> ![Homology Ablation](assets/Images/homology_ablation_panel.png)
 
 ### 2. Topology-Aware Similarity
 
 Replacing the Gaussian kernel with a uniform weight ($w_{ij} = 1$) drastically reduces clustering quality, proving the necessity of topology-guided fusion paths.
 
-> `![Hyperparameter Ablation](assets/Images/parameter_ablation_3d.png)`
+> ![Hyperparameter Ablation](assets/Images/parameter_ablation_3d.png)
 
 ### 3. Noise Robustness (Torus-Line-Sphere Extremes)
 
 We tested TopoCon's resilience on the **Torus-Line-Sphere** dataset under varying levels of Gaussian noise ($\rho$). The performance curve demonstrates stable structural separation at low noise levels, peaking at moderate local neighborhood graph sizes ($k$). However, as the graph becomes over-smoothed at excessively high $k$ values, the performance collapses chaotically as the structural voids are bridged by noise.
 
-> `![Noise Robustness Curve](assets/Images/noise_robustness_ablation.png)`
+> ![Noise Robustness Curve](assets/Images/noise_robustness_ablation.png)
 
 To visually highlight this structural breakdown, the following panel compares the ground truth against TopoCon's predictions at two environmental extremes: the clean baseline ($\rho = 0.0, \text{ARI} = 0.989$) versus a highly noisy state ($\rho = 0.3, \text{ARI} = 0.326$) where spatial bleeding obscures the manifold boundaries.
 
-> `![Torus Line Sphere Extremes](assets/Images/tls_noise_ablat.png)`
+> ![Torus Line Sphere Extremes](assets/Images/tls_noise_ablat.png)
 
 <!--## 📜 Citation
 
