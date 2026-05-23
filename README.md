@@ -35,7 +35,7 @@ TopoCon bridges this gap by:
 **The TopoCon Pipeline (Warmup):**
 Below is the conceptual framework of TopoCon, illustrating the progression from local neighborhood filtrations to the persistence-matrix-driven convex optimization.
 
-> ![TopoCon Framework/Warmup Diagram](assets/Images/warmup_diagram.png)
+> ![TopoCon Framework/Warmup Diagram](assets/Images/clustering_comparison_panel.png)
 
 **The TopoCon Objective Function:**
 
@@ -108,8 +108,6 @@ python main_pipeline.py --dataset cylinder_torus --method topocon
 ## 📊 Experimental Results
 
 TopoCon was evaluated against a suite of baseline methods including KM, DBSCAN, Mean-Shift, Spectral Clustering, CC, BCC, RCC, TKM, ToMATo, and TPCC.
-
-> ![Mobius Torus Comparison](assets/Images/clustering_comparison_panel.png)
 
 ### Synthetic Manifolds
 
