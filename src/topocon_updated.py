@@ -6,7 +6,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from ripser import ripser
 from sklearn.neighbors import NearestNeighbors
-from sklearn.metrics import pairwise_distances, adjusted_rand_score, normalized_mutual_info_score
+from sklearn.metrics import pairwise_distances
 from sklearn.preprocessing import StandardScaler
  
 warnings.filterwarnings("ignore")
