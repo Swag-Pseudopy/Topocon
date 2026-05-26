@@ -11,11 +11,6 @@ from sklearn.preprocessing import StandardScaler
  
 warnings.filterwarnings("ignore")
  
- 
-# ---------------------------------------------------------------------------
-# TopoCon Class
-# ---------------------------------------------------------------------------
- 
 class TopoCon:
  
     def __init__(self, n_neighbors: int = 15,
