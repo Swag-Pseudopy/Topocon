@@ -107,7 +107,7 @@ python main_pipeline.py --dataset cylinder_torus --method topocon
 
 ## 📊 Experimental Results
 
-TopoCon was evaluated against a suite of baseline methods including KM, DBSCAN, Mean-Shift, Spectral Clustering, CC, BCC, RCC, TKM, ToMATo, and TPCC.
+TopoCon was evaluated against a suite of baseline methods, including KM, DBSCAN, Mean-Shift, Spectral Clustering, CC, BCC, RCC, TKM, ToMATo, and TPCC.
 
 ### Synthetic Manifolds
 
@@ -151,7 +151,7 @@ Extensive ablation studies confirm the necessity of the core components and eval
 
 To quantify the impact of different topological signatures, we evaluated TopoCon using only connected components ($H_0$), only loops ($H_1$), and their combination. While $H_0$ carries the primary clustering signal for dense real-world data, complex intertwined synthetic manifolds require the synergistic combination of both $H_0$ and $H_1$ to achieve peak performance.
 
-> ![Homology Ablation](assets/Images/homology_ablation_panel.png)
+> ![Homology Ablation](assets/Images/homology-ablation.png)
 
 ### 2. Topology-Aware Similarity
 
