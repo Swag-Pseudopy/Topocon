@@ -166,7 +166,7 @@ We tested TopoCon's resilience on the **Torus-Line-Sphere** dataset under varyin
 
 > ![Noise Robustness Curve](assets/Images/noise_robustness_ablation.png)
 
-To visually highlight this structural breakdown, the following panel compares the ground truth against TopoCon's predictions at two environmental extremes: the clean baseline ($\rho = 0.0, \text{ARI} = 0.989$) versus a highly noisy state ($\rho = 0.3, \text{ARI} = 0.326$) where spatial bleeding obscures the manifold boundaries.
+To visually highlight this structural breakdown, the following panel compares the ground truth against TopoCon's predictions at two environmental extremes: the clean baseline ($\rho = 0.0, \text{ARI} = 0.942$) versus a highly noisy state ($\rho = 0.3, \text{ARI} = 0.386$) where spatial bleeding obscures the manifold boundaries.
 
 > ![Torus Line Sphere Extremes](assets/Images/tls_noise_ablat.png)
 
