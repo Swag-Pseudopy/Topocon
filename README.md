@@ -157,8 +157,7 @@ To quantify the impact of different topological signatures, we evaluated TopoCon
 
 Replacing the Gaussian kernel with a uniform weight ($w_{ij} = 1$) drastically reduces clustering quality, proving the necessity of topology-guided fusion paths.
 
-> ![Hyperparameter Ablation](assets/Images/parameter_ablation_3d.png)
-> ![Hyperparameter Ablation](assets/Images/parameter_ablation_3d_wisconsin_mobius.png)
+> ![Hyperparameter Ablation](assets/Images/ablation-kernel.pdf)
 
 ### 3. Noise Robustness (Torus-Line-Sphere Extremes)
 
