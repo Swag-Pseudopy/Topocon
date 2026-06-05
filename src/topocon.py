@@ -9,8 +9,6 @@ from sklearn.neighbors import NearestNeighbors
 from sklearn.metrics import pairwise_distances
 from sklearn.preprocessing import StandardScaler
  
-warnings.filterwarnings("ignore")
- 
 class TopoCon:
  
     def __init__(self, n_neighbors: int = 15,
@@ -64,8 +62,7 @@ class TopoCon:
  
         objective = 0.5 * cp.norm(P - U, "fro") ** 2 \
                   + (self.gamma / 2) * cp.norm(U, "fro") ** 2
- 
-        # Fusion terms (sparse: only edges above threshold)
+
         fusion = 0.0
         for i in range(n):
             for j in range(i + 1, n):
