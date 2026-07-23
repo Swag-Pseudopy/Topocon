@@ -132,7 +132,7 @@ TopoCon generalizes efficiently to high-dimensional real-world data across tabul
 
 * **Wisconsin Breast Cancer:** ARI = 0.821
 
-> ![Wisconsin B.C. Dataset t-SNE](assets/Images/tsne_wisconsin.png)
+> ![Wisconsin B.C. Dataset t-SNE](assets/Images/real-tsne.png)
 
 * **ORHD:** ARI = 0.783
 
