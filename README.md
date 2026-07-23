@@ -130,18 +130,10 @@ On highly complex, intertwined topological structures, TopoCon achieves perfect 
 
 TopoCon generalizes efficiently to high-dimensional real-world data across tabular, biological, and image domains. For instance, on the **Zoo dataset**, TopoCon successfully maps higher-dimensional features into coherent clusters ($\text{ARI} = 0.772$), demonstrating adaptability beyond controlled synthetic manifolds.
 
-* **Wisconsin Breast Cancer:** ARI = 0.821
-
-> ![Wisconsin B.C. Dataset t-SNE](assets/Images/real-tsne.png)
-
-* **ORHD:** ARI = 0.783
-
-> ![ORHD Dataset t-SNE](assets/Images/tsne_orhd.png)
-
 * **Zoo:** ARI = 0.772
-
-> ![Zoo Dataset t-SNE](assets/Images/tsne_zoo.png)
-
+* **Wisconsin Breast Cancer:** ARI = 0.821
+* **ORHD:** ARI = 0.783
+> ![Wisconsin B.C. Dataset t-SNE](assets/Images/real-tsne.png)
 
 ## 🔬 Ablation Studies & Robustness
 
