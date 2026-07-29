@@ -1,6 +1,6 @@
 # Topological Convex Clustering (TopoCon)
 
-This repository contains the official Python implementation of **TopoCon: Where Persistent Homology meets Convex Optimization**.
+This repository contains the official Python implementation of **TopoCon: Topology-Aware Clustering where Persistent Homology meets Convex Fusion**.
 
 TopoCon is a novel clustering framework that seamlessly integrates persistent homology from Topological Data Analysis (TDA) with convex optimization. By embedding multiscale topological features (derived from Vietoris-Rips filtrations) into a topology-aware convex clustering model, TopoCon accurately captures intrinsic manifold structures and non-convex geometries that traditional distance-based algorithms miss.
 
