@@ -75,7 +75,7 @@ class TopoCon:
         if U.value is None:
             raise RuntimeError("CVXPY solver did not converge.")
  
-        return U.value  # (M, n)
+        return U.value 
  
     def _estimate_tau(self, U: np.ndarray) -> float:
         nbrs = NearestNeighbors(n_neighbors=self.tau_k + 1).fit(U.T)
